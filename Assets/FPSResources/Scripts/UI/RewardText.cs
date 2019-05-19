@@ -12,9 +12,10 @@ public class RewardText : MonoBehaviour {
 	IEnumerator updateRewardTextCo = null;
 
 	void Start() {
+        // find the RewardText and get component to assign it in rewardText
 		rewardText = GameObject.Find("UI/InGameUI/Info/RewardText").GetComponent<Text>();
 	}
-
+    // shows the experience and the fund
 	public void Show(int exp, int fund) {
 		if(updateRewardTextCo != null) StopCoroutine(updateRewardTextCo);
 
