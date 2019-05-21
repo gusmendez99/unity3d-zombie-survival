@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour {
 	public float startHealth = 100f; //start health for all enemies (without upgrade)
 	public float startMoveSpeed = 1f; //start moving speed for all enemies (without upgrade)
     public float startDamage = 15f; //start damage each enemy will cause on the player (without upgrade)
-    public int startEXP = 3; //start experience for all enemies
+    public int startEXP = 3; //start experience given to the player if he kills an e
 	public int startFund = 5; //start fund for all enemies
 	public float upgradeDuration = 60f;	// Increase all enemy stats every 30 seconds
 

@@ -34,6 +34,7 @@ public class NetworkManager : MonoBehaviour {
 
 	// public virtual void OnJoinedRoom() {
 	void Start() {
+
 		lobbyCam.SetActive(false);
 		lobbyUI.SetActive(false);
 
@@ -45,6 +46,8 @@ public class NetworkManager : MonoBehaviour {
 		enemySpawner.SetActive(true);
 		enemySpawner.GetComponent<EnemySpawner>().target = playerObj;
 	}
+
+
 
 	// void Update() {
 	// 	statusText.text = PhotonNetwork.connectionStateDetailed.ToString();
