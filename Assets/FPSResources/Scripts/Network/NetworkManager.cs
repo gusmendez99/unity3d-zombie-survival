@@ -15,6 +15,8 @@ public class NetworkManager : MonoBehaviour {
 	public GameObject lobbyUI;
 	public GameObject inGameUI;
 	public Text statusText;
+    private KillCounterScript killCounterScript;
+    public GameObject killCounterGO;    
 
 	public List<GameObject> Players {
 		get {
@@ -33,23 +35,25 @@ public class NetworkManager : MonoBehaviour {
 	// }
 
 	// public virtual void OnJoinedRoom() {
-	void Start() {
+	void Awake() {
 
 		lobbyCam.SetActive(false);
 		lobbyUI.SetActive(false);
 
 		GameObject playerObj = Instantiate(player, spawnPoint.position, spawnPoint.rotation);
+        if (killCounterGO) killCounterGO.GetComponent<KillCounterScript>().player = playerObj; //add the current player to the killCounter Script
 		// GameObject player = PhotonNetwork.Instantiate(playerName, spawnPoint.position, spawnPoint.rotation, 0);
 		// players.Add(player);
 
 		inGameUI.SetActive(true);
 		enemySpawner.SetActive(true);
 		enemySpawner.GetComponent<EnemySpawner>().target = playerObj;
-	}
+      
+
+    }
 
 
 
-	// void Update() {
-	// 	statusText.text = PhotonNetwork.connectionStateDetailed.ToString();
-	// }
+	void Update() {
+    }
 }

@@ -181,6 +181,8 @@
     <Compile Include="Assets\FPSResources\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\FPSResources\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\FPSResources\Standard Assets\Utility\WaypointProgressTracker.cs" />
+    <Compile Include="Assets\KillCounterScript.cs" />
+    <Compile Include="Assets\SceneChangerScript.cs" />
     <Compile Include="Assets\videoManagerScript.cs" />
     <None Include="Assets\FPSResources\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
     <None Include="Assets\FPSResources\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />

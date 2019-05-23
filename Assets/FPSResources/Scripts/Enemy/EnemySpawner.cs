@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour {
 	private List<GameObject> enemies = new List<GameObject>(); //list of enemies
 
     // START DECLARATION OF OWN VARIABLES
-    public int enemiesToSpawn = 20; //total of enemies to spawn according to the stage
+    public int enemiesToSpawn; //total of enemies to spawn according to the stage
     private int enemiesSpawned = 0; // total of enemies already spawn
 
 
@@ -70,7 +70,7 @@ public class EnemySpawner : MonoBehaviour {
                 SpawnEnemy();
             } else
             {
-                Debug.Log("ALL ENEMIES DEAD");
+                //Debug.Log("ALL ENEMIES ALREADY SPAWNED");
             }
 		}
         //compare time passed since last upgradeEnemy call to upgradeTimer duration

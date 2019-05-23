@@ -83,7 +83,10 @@ public class WeaponBase : MonoBehaviour {
 	public float upgradeSteadyFactor = 1;
 	public int upgradeSteady = 0;
 
-	private Animator animator;
+    public int enemiesKilled;
+
+
+    private Animator animator;
 	private float fireTimer;
 	private bool isReloading = false;
 	private bool isEnabled = true;
@@ -101,7 +104,9 @@ public class WeaponBase : MonoBehaviour {
 
 	private WeaponBob weaponBob;
 
-	public bool IsEnabled {
+
+
+    public bool IsEnabled {
 		get {
 			return isEnabled;
 		}
@@ -109,6 +114,7 @@ public class WeaponBase : MonoBehaviour {
 			isEnabled = value;
 		}
 	}
+
 
 	void Start() {
 		animator = GetComponent<Animator>();
@@ -214,6 +220,8 @@ public class WeaponBase : MonoBehaviour {
 							fundSystem.AddFund(fund);
 
 							rewardText.Show(exp, fund);
+                            SetNewKill();     // Add a Kill
+                            Debug.Log("Enemy killed " + enemiesKilled); //Show amount of kills
 						}
 					}
 
@@ -434,4 +442,15 @@ public class WeaponBase : MonoBehaviour {
 	void OnReloadEnd() {
 		isReloading = false;
 	}
+
+    public void SetNewKill()
+    {
+        enemiesKilled += 1;
+    }
+
+    public int GetEnemiesKilled()
+    {
+        return enemiesKilled;
+    }
+
 }
