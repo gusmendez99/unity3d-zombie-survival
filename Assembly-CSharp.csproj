@@ -190,6 +190,7 @@
     <None Include="Assets\FPSResources\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\FPSResources\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
     <None Include="Assets\ApocalypticCityPack\Extreme Flora Pack\Shader\AlphaTest-DiffuseDoublesided.shader" />
+    <None Include="Assets\UrbanNightSky\Readme.txt" />
     <None Include="Assets\FPSResources\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\FPSResources\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
     <None Include="Assets\ApocalypticCityPack\Extreme Flora Pack\Shader\AlphaTest-DiffuseBack.shader" />
