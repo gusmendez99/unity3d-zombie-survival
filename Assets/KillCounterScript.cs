@@ -22,6 +22,8 @@ public class KillCounterScript : MonoBehaviour
     public int killsToMake;
     public GameObject sceneChanger;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +54,7 @@ public class KillCounterScript : MonoBehaviour
            
         Debug.Log("TOTAL KILLS IS: " + totalKills.ToString());
         Debug.Log("KILL TO MAKE IS: " + killsToMake.ToString());
-        if (killsToMake == totalKills)
+        if (killsToMake <= totalKills)
         {
             if (sceneChanger)
             {
