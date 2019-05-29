@@ -1,39 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class videoManagerScript : MonoBehaviour
 {
-    public GameObject gameManager;
-    public GameObject lobbyCam;
-    public GameObject userInt;
     public GameObject videoCam;
-    
+    public int sceneToJumpIndex;
+    public int videoDuration;
     // Start is called before the first frame update
     void Start()
     {
-        videoCam.SetActive(true);
-        lobbyCam.SetActive(false);
-        userInt.SetActive(false);
-        gameManager.SetActive(false);
-        StartCoroutine(ShowIntro());
-        
+        if (videoCam)
+        {
+            StartCoroutine(ShowIntro());
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     IEnumerator ShowIntro()
     {
         print(Time.time);
-        yield return new WaitForSeconds(48f);
+        yield return new WaitForSeconds(videoDuration);
         print(Time.time);
-        lobbyCam.SetActive(true);
-        videoCam.SetActive(false);
-        userInt.SetActive(true);
-        gameManager.SetActive(true);
+        LoadScene(sceneToJumpIndex);
+
+
+    }
+
+    private void LoadScene(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
     }
 }

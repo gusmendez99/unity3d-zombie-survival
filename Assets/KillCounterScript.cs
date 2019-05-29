@@ -21,6 +21,10 @@ public class KillCounterScript : MonoBehaviour
     public int totalKills;
     public int killsToMake;
     public GameObject sceneChanger;
+    public GameObject nextSceneMessage;
+    public GameObject guideLight1;
+    public GameObject guideLight2;
+    public GameObject guideLight3;
 
 
 
@@ -56,6 +60,17 @@ public class KillCounterScript : MonoBehaviour
         Debug.Log("KILL TO MAKE IS: " + killsToMake.ToString());
         if (killsToMake <= totalKills)
         {
+            if (nextSceneMessage)
+            {
+                nextSceneMessage.SetActive(true);
+            }
+
+            if (guideLight1 && guideLight2 && guideLight3)
+            {
+                guideLight1.SetActive(true);
+                guideLight2.SetActive(true);
+                guideLight3.SetActive(true);
+            }
             if (sceneChanger)
             {
                 sceneChanger.SetActive(true);
