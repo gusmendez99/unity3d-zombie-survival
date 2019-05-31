@@ -31,11 +31,13 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         UI.enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     public void Continue()
     {
         Time.timeScale = 1.0f;
         UI.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Return()

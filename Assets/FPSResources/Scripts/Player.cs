@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -33,7 +34,10 @@ public class Player : MonoBehaviour {
 					DisableController((FirstPersonController)script);
 				}
 			}
-		}
+
+            
+
+        }
 	}
 
 	void DisableWeapon(WeaponBase weapon) {
@@ -55,7 +59,12 @@ public class Player : MonoBehaviour {
 			yield return new WaitForSeconds(0.1f);
 		}
 
-		yield break;
+        Cursor.lockState = CursorLockMode.None;
+        // Hide cursor when locking
+        Cursor.visible = true;
+        StartCoroutine(GoToHomeScene());
+
+        yield break;
 	}
 
 	void OnControllerColliderHit(ControllerColliderHit hit) {
@@ -63,4 +72,16 @@ public class Player : MonoBehaviour {
 			Physics.IgnoreCollision(GetComponent<Collider>(), hit.gameObject.GetComponent<Collider>());
 		}
 	}
+
+    public IEnumerator GoToHomeScene()
+    {
+        
+        yield return new WaitForSeconds(3f);
+        LoadScene(0);
+    }
+
+    private void LoadScene(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
+    }
 }
